@@ -24,6 +24,8 @@ MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by Message, Severity
 ```
+## Output
+![Step 2 Results](2ndquery.png)
 ---
 
 ## Step 3: Detect suspicious activity
@@ -33,6 +35,8 @@ MyLogs_CL
 | summarize FailedAttempts = count() by Message, Severity
 | where FailedAttempts >= 2
 ```
+## Output
+![Step 3 Results](3rdquery.png)
 ---
 
 ## Step 4: Timeline analysis
@@ -42,6 +46,10 @@ MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
 ```
+
+## Output
+![Step 4 Results](4thquery.png)
+![Step 4 Timeline chart](chart 5thquery.png)
 ---
 
 ## Conclusion
