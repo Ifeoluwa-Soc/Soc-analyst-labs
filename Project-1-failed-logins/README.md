@@ -33,7 +33,6 @@ MyLogs_CL
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by Message, Severity
-| where FailedAttempts >= 2
 ```
 ## Output
 ![Step 3 Results](3rdquery.png)
