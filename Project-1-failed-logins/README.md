@@ -14,12 +14,14 @@ MyLogs_CL
 | sort by TimeGenerated desc
 
 Step 2: Analyze frequency
+
 ```kql
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by Message, Severity
 
 Step 3: Detect suspicious activity
+
 ```kql
 MyLogs_CL
 | where Message contains "failed"
@@ -27,6 +29,7 @@ MyLogs_CL
 | where FailedAttempts >= 2
 
 Step 4: Timeline analysis
+
 ```kql
 MyLogs_CL
 | where Message contains "failed"
