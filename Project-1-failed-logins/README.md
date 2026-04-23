@@ -32,7 +32,7 @@ MyLogs_CL
 ```kql
 MyLogs_CL
 | where Message contains "failed"
-| summarize FailedAttempts = count() by Message, Severity
+| summarize FailedAttempts = count() by Message
 | where FailedAttempts >= 2
 ```
 ## Output
