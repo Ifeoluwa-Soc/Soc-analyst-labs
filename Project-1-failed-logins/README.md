@@ -13,6 +13,7 @@ MyLogs_CL
 | Where Message contains "failed"
 | sort by TimeGenerated desc
 
+---
 ```markdown
 ## Step 2: Analyze frequency
 
