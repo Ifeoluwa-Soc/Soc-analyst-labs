@@ -48,8 +48,19 @@ MyLogs_CL
 | summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
 ```
 ## Output
-Login attempts are grouped into 5-minute intervals to visualizee attack pattern
-![Step 4 Timeline chart](timelinequery.png)
+Login attempts are grouped into 5-minute intervals to visualize attack pattern.
+![Step 4 Results](4thquery.png)
+---
+
+## Step 5: Timeline Chart
+```kql
+MyLogs_CL
+| where Message contains "failed"
+| summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
+```
+## Output
+Login attempts are grouped into 5-minute intervals to visualize attack pattern as a chart
+![Step 5 Timeline chart](timelinequery.png)
 ---
 
 ## Conclusion
