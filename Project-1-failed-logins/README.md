@@ -37,7 +37,7 @@ MyLogs_CL
 | Where FailedAttempts >= 2
 ```
 ## Output
-Multiple failed attempts are identified, indicating potential brute foirce activity.
+Multiple failed attempts are identified, indicating potential brute force activity.
 ![Step 3 Results](3rdquery.png)
 ---
 
