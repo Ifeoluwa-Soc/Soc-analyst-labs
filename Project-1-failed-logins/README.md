@@ -5,16 +5,14 @@ Detect repeated failed login attempts indicating potential brute force attacks.
 
 Data Source
 Custom logs ingested into Microsoft Sentinel (MyLogs_CL)
+---
 
-Step 1: Identify failed logins
-
+## Step 1: Identify failed logins
 ```kql
 MyLogs_CL
 | Where Message contains "failed"
 | sort by TimeGenerated desc
 
----
-```markdown
 ## Step 2: Analyze frequency
 
 ```kql
