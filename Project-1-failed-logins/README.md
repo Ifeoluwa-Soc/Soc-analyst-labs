@@ -38,7 +38,7 @@ MyLogs_CL
 ```
 ## Output
 Login attempts are grouped into 5-minute intervals to visualizee attack pattern
-![Step 3 Results](4thquery.png)
+![Step 3 Results](3rdquery.png)
 ---
 
 ## Step 4: Timeline Analysis
