@@ -14,7 +14,7 @@ MyLogs_CL
 | sort by TimeGenerated desc
 ```
 ## Output
-![Step 1 Results] (1stquery.png)
+![Step 1 Results](1stquery.png)
 ---
 
 ## Step 2: Analyze frequency
