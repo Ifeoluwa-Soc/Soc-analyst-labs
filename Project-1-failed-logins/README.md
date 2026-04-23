@@ -7,6 +7,7 @@ Data Source
 Custom logs ingested into Microsoft Sentinel (MyLogs_CL)
 
 Step 1: Identify failed logins
+
 ```kql
 MyLogs_CL
 | Where Message contains "failed"
