@@ -13,6 +13,7 @@ MyLogs_CL
 | Where Message contains "failed"
 | sort by TimeGenerated desc
 
+
 ## Step 2: Analyze frequency
 
 ```kql
