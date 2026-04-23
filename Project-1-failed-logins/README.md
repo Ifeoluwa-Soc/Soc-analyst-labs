@@ -24,20 +24,23 @@ MyLogs_CL
 ```
 ---
 
-##Step 3: Detect suspicious activity
-
+## Step 3: Detect suspicious activity
 ```kql
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by Message, Severity
 | where FailedAttempts >= 2
+```
+---
 
-Step 4: Timeline analysis
+## Step 4: Timeline analysis
 
 ```kql
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
+```
+---
 
-Conclusion
+## Conclusion
 Suspicious login activity detected. Recommend monitoring and alert creation 
