@@ -22,7 +22,7 @@ MyLogs_CL
 ```kql
 MyLogs_CL
 | where Message contains "failed"
-| summarize FailedAttempts = count() by Message, Severity
+| summarize FailedAttempts = count() by Message
 ```
 ## Output
 ![Step 2 Results](2ndquery.png)
@@ -32,7 +32,7 @@ MyLogs_CL
 ```kql
 MyLogs_CL
 | where Message contains "failed"
-| summarize FailedAttempts = count() by Message
+| summarize FailedAttempts = count() by Message, Severity
 | where FailedAttempts >= 2
 ```
 ## Output
