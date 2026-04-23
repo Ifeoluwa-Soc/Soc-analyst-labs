@@ -14,17 +14,18 @@ MyLogs_CL
 | sort by TimeGenerated desc
 ```
 ## Output
+The query returns all failed login attempts
 ![Step 1 Results](1stquery.png)
 ---
 
 ## Step 2: Analyze frequency
-
 ```kql
 MyLogs_CL
 | where Message contains "failed"
-| summarize FailedAttempts = count() by Message
+| summarize FailedAttempts = count() by Message, Severity
 ```
 ## Output
+This query shows the frequency of failed login attempts.
 ![Step 2 Results](2ndquery.png)
 ---
 
@@ -33,30 +34,22 @@ MyLogs_CL
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by Message, Severity
-```
-## Output
-![Step 3 Results](3rdquery.png)
----
-
-## Step 4: Timeline analysis
-```kql
-MyLogs_CL
-| where Message contains "failed"
-| summarize FailedAttempts = count() by Message, Severity
 | Where FailedAttempts >= 2
 ```
 ## Output
-![Step 4 Results](4thquery.png)
+Login attempts are grouped into 5-minute intervals to visualizee attack pattern
+![Step 3 Results](4thquery.png)
 ---
 
-## Step 5: Timeline Chart
+## Step 4: Timeline Analysis
 ```kql
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
 ```
 ## Output
-![Step 5 Timeline chart](timelinequery.png)
+Login attempts are grouped into 5-minute intervals to visualizee attack pattern
+![Step 4 Timeline chart](timelinequery.png)
 ---
 
 ## Conclusion
