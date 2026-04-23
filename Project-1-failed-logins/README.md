@@ -13,6 +13,8 @@ MyLogs_CL
 | Where Message contains "failed"
 | sort by TimeGenerated desc
 ```
+##Output
+![Step 1 Results] (images/First query.png)
 ---
 
 ## Step 2: Analyze frequency
