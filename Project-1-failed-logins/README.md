@@ -39,17 +39,24 @@ MyLogs_CL
 ---
 
 ## Step 4: Timeline analysis
+```kql
+MyLogs_CL
+| where Message contains "failed"
+| summarize FailedAttempts = count() by Message, Severity
+| Where FailedAttempts >= 2
+```
+## Output
+![Step 4 Results](4thquery.png)
+---
 
+## Step 5: Timeline Chart
 ```kql
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
-| Where FailedAttempts >= 2
 ```
-
 ## Output
-![Step 4 Results](4thquery.png)
-![Step 4 Timeline chart](timelinequery.png)
+![Step 5 Timeline chart](timelinequery.png)
 ---
 
 ## Conclusion
