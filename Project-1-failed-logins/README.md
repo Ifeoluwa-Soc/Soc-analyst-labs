@@ -12,7 +12,8 @@ Custom logs ingested into Microsoft Sentinel (MyLogs_CL)
 MyLogs_CL
 | Where Message contains "failed"
 | sort by TimeGenerated desc
-
+```
+---
 
 ## Step 2: Analyze frequency
 
@@ -20,8 +21,10 @@ MyLogs_CL
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by Message, Severity
+```
+---
 
-Step 3: Detect suspicious activity
+##Step 3: Detect suspicious activity
 
 ```kql
 MyLogs_CL
