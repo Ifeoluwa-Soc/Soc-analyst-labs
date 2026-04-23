@@ -49,7 +49,7 @@ MyLogs_CL
 
 ## Output
 ![Step 4 Results](4thquery.png)
-![Step 4 Timeline chart](chart 5thquery.png)
+![Step 4 Timeline chart](timelinequery.png)
 ---
 
 ## Conclusion
