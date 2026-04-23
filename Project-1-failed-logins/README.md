@@ -44,6 +44,7 @@ MyLogs_CL
 MyLogs_CL
 | where Message contains "failed"
 | summarize FailedAttempts = count() by bin(TimeGenerated, 5m)
+| Where FailedAttempts >= 2
 ```
 
 ## Output
