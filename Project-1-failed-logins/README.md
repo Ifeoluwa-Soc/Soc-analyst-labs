@@ -37,7 +37,7 @@ MyLogs_CL
 | Where FailedAttempts >= 2
 ```
 ## Output
-Login attempts are grouped into 5-minute intervals to visualizee attack pattern
+Multiple failed attempts are identified, indicating potential brute foirce activity.
 ![Step 3 Results](3rdquery.png)
 ---
 
