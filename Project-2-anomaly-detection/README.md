@@ -19,4 +19,6 @@ MyLogs_CL
 ---
 ## Output
 Shows total number of log events in the dataset
+
+
 ---
