@@ -28,3 +28,14 @@ MyLogs_CL
 Displays distribution of log types (failed vs successful logins)
 ![Step 2 Results](fvs.png)
 ---
+
+## Step 3: Analyze event timeline
+```kql
+MyLogs_CL
+| summarize Count = count() by bin(TimeGenerated, 10m)
+| sort by TimeGenerated asc
+```
+## Output
+Visualizes how events are distributed over time
+![Step 3 Results](FOT.png)
+---
