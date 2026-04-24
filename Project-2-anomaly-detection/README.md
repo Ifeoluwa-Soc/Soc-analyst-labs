@@ -22,3 +22,15 @@ Shows total number of log events in the dataset
 
 
 ---
+# Separator
+
+## Step 2: Compare event types
+
+```kql
+MyLogs_CL
+| summarize Count = count() by Message
+```
+## Output
+Displays distribution of log types (failed vs successful logins)
+
+---
